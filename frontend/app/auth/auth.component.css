@@ -1,0 +1,38 @@
+.bg {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-image: url("frontend/assets/image/login.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-filter: blur(5px);
+    filter: blur(0.5px);
+}
+
+.area-login {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 8px;
+    height: 465px;
+    width: 350px;
+    color: white;
+}
+
+.input-login {
+    border: none;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    outline: none;
+    font-size: 24px;
+    border-radius: 8px;
+    background-color: white;
+    padding: 5px;
+    width: 100%;
+    color: black;
+}
+
+.input-login:hover{
+    
+    background-color: transparent;
+}

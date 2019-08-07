@@ -1,0 +1,106 @@
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" data-backdrop="static"
+  data-keyboard="false" id="modalTransaction" role="dialog" tabindex="-1">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="d-flex justify-content-center p-3">
+          <h1>{{typeEdition.title}}</h1>
+        </div>
+        <div *ngIf="typeEdition.type == 'new' || typeEdition.type == 'edit'">
+          <div class="row p-3">
+            <div class="col-sm-6" *ngIf="itemsStore.length > 0">
+              <select [(ngModel)]="data.store" class="custom-select" required>
+                <option disabled="disabled" ng-selected>Selecciona una tienda</option>
+                <option *ngFor="let item of itemsStore" [value]="item.id">
+                  {{item.name}}
+                </option>
+              </select>
+            </div>
+            <div class="col-sm-6" *ngIf="itemsUser.length > 0">
+              <select [(ngModel)]="data.user" class="custom-select" required>
+                <option disabled="disabled" ng-selected>Selecciona un usuario</option>
+                <option *ngFor="let item of itemsUser" [value]="item.id">
+                  {{item.name}}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="row p-3">
+            <div class="col-sm-6" *ngIf="itemsCard.length > 0">
+              <select (change)="cardData($event)" [(ngModel)]="data.card" class="custom-select" required>
+                <option disabled="disabled" ng-selected>Selecciona una tarjeta</option>
+                <option *ngFor="let item of itemsCard" [value]="item.id">
+                  {{item.customer.name}}
+                </option>
+              </select>
+            </div>
+            <div class="col-sm-6" *ngIf="data.card">
+              <label *ngIf="selectedCard.customer.age < 16 || selectedCard.customer.age > 65">
+                Aplica 15% de descuento
+              </label>
+            </div>
+          </div>
+          <div class="row p-3">
+            <div class="col-sm-6">
+              <input type="number" (keyup)="calculateData($event)" [(ngModel)]="data.sale" placeholder="Venta" class="input">
+            </div>
+            <div class="col-sm-6">
+              <input type="number" [(ngModel)]="data.total" placeholder="Total" class="input" disabled="disabled">
+            </div>
+          </div>
+        </div>
+        <div class="modal-body" *ngIf="typeEdition.type == 'detail'">
+          <div class="row p-3">
+            <div class="col-sm-6">
+              Fecha Venta: <strong> {{data.date_sale | date:'medium'}} </strong>
+            </div>
+            <div class="col-sm-6" *ngIf="data.card.customer">
+              Tarjeta: <strong> {{data.card.customer.name}} </strong>
+            </div>
+          </div>
+          <div class="row p-3">
+            <div class="col-sm-6">
+              Tienda: <strong> {{data.store.name}} </strong>
+            </div>
+            <div class="col-sm-6">
+              Cajero: <strong> {{data.user.user}} </strong>
+            </div>
+          </div>
+          <div class="row p-3">
+            <div class="col-sm-6">
+              Monto: <strong> {{data.sale}} </strong>
+            </div>
+            <div class="col-sm-6">
+              Total: <strong> {{data.total}} </strong>
+            </div>
+          </div>
+          <div class="row p-3">
+            <div class="col-sm-6">
+              Descuento: <strong> {{data.discount_rate}}%</strong>
+            </div>
+            <div class="col-sm-6">
+              Monto Descontado: <strong> {{data.discount_sale}} </strong>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body" *ngIf="typeEdition.type == 'delete'">
+          Desea eliminar el registro de <strong> {{data.authorization}} </strong> ?
+        </div>
+      </div>
+      <div class="d-flex justify-content-center p-3">
+        <button (click)="accept()" class="btn btn-primary"
+          *ngIf="typeEdition.type == 'new' || typeEdition.type == 'edit'"
+          [disabled]="!data.sale || !data.total || !data.card || !data.user || !data.store">
+          Aceptar
+        </button>
+        <button (click)="accept()" class="btn btn-primary"
+          *ngIf="typeEdition.type == 'detail' || typeEdition.type == 'delete'">
+          Aceptar
+        </button>
+        &nbsp;&nbsp;&nbsp;
+        <button (click)="cancel()" class="btn btn-outline-primary"
+          *ngIf="typeEdition.type == 'new' || typeEdition.type == 'edit' || typeEdition.type == 'delete'">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>

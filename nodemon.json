@@ -1,0 +1,11 @@
+{
+    "watch": [
+        "backend", "frontend"
+    ],
+    "ext": "html ts css",
+    "ignore": [
+        "backend/src/**/*.spec.ts",
+        "frontend/app/**/*.spec.ts"
+    ], 
+    "exec": "ng build && ts-node backend/src/main.ts"
+}

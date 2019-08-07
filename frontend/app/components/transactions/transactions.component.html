@@ -1,0 +1,49 @@
+<br>
+<br>
+<div class="d-flex justify-content-center">
+  <h1> Módulo de Transacciones </h1>
+</div>
+<br>
+<br>
+<div class="d-flex justify-content-end">
+  <button class="btn btn-outline-primary my-2 my-sm-0" (click)="add()">
+    Agregar Registro
+  </button>
+  &nbsp;&nbsp;&nbsp;
+</div>
+<br>
+<br>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Venta</th>
+        <th scope="col">Descuento</th>
+        <th scope="col">Monto Descontado</th>
+        <th scope="col">Total</th>
+        <th scope="col">Autorización</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of items; let idx = index">
+      <tr>
+        <th scope="row"> {{ idx + 1 }} </th>
+        <td> {{ item.date_sale | date:'medium'  }} </td>
+        <td> {{ item.sale }} </td>
+        <td> {{ item.discount_rate }}%</td>
+        <td> {{ item.discount_sale }} </td>
+        <td> {{ item.total }} </td>
+        <td> {{ item.authorization }} </td>
+        <td>
+          <img src="assets/image/detail.svg" style="width: 30px; height: 30px; cursor: pointer;" (click)="detail(item)" title="Detalles">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-modal-transaction *ngIf="open" [open]="open" [typeEdition]="typeEdition" [data]="item" (_cancel)="open = false"
+  (success)="successModal($event)"></app-modal-transaction>

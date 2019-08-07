@@ -1,0 +1,28 @@
+<div class="d-flex aling-items-center bg">
+  <div class="container">
+    <div class="row">
+      <div class="col sm 4">
+
+      </div>
+      <div class="col sm 4 area-login">
+        <div class="d-flex justify-content-center">
+          <img src="assets/image/login-icon.svg" style="width: 150px; height: 150px; margin-top: 20px;">
+        </div>
+        <div class="d-flex justify-content-center">
+          <h1 style="margin-top: 30px;">Iniciar Sesión</h1>
+        </div>
+        <input [(ngModel)]="user" placeholder="Usuario" type="text" class="input-login">
+        <br />
+        <input [(ngModel)]="password" placeholder="Constraseña" type="password" class="input-login" (keydown.enter)="auth()">
+        <div class="d-flex justify-content-end" style="margin-bottom: 20px;">
+          <button type="submit" class="btn btn-primary" [disabled]="user == '' || password == ''" (click)="auth()">
+            Iniciar Sesión
+          </button>
+        </div>
+      </div>
+      <div class="col sm 4">
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" data-backdrop="static"
+  data-keyboard="false" id="modalCard" role="dialog" tabindex="-1">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="d-flex justify-content-center p-3">
+          <h1>{{typeEdition.title}}</h1>
+        </div>
+        <div *ngIf="typeEdition.type == 'new' || typeEdition.type == 'edit'">
+          <div class="row p-3">
+            <div class="col-sm-6">
+              <input type="number" [(ngModel)]="data.cod" placeholder="Código" class="input">
+            </div>
+            <div class="col-sm-6">
+              <input type="number" [(ngModel)]="data.rode" placeholder="Monto" class="input">
+            </div>
+          </div>
+          <div class="row p-3">
+            <div class="col-sm-6">
+              <input [(ngModel)]="data.balance" placeholder="Saldo" class="input">
+            </div>
+            <div class="col-sm-6">
+              <input type="date" [(ngModel)]="data.validity" placeholder="Vigencia" class="input">
+            </div>
+          </div>
+          <div class="row p-3" *ngIf="items.length > 0">
+            <div class="col-sm-6">
+              <select [(ngModel)]="data.customer" class="custom-select" required>
+                <option disabled="disabled" ng-selected>Selecciona un cliente</option>
+                <option *ngFor="let item of items" [value]="item.id">
+                  {{item.name}}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body" *ngIf="typeEdition.type == 'detail'">
+          <div class="row p-3">
+            <div class="col-sm-6">
+              Código: <strong> {{data.cod}} </strong>
+            </div>
+            <div class="col-sm-6">
+              Cliente: <strong> {{data.customer.name}} </strong>
+            </div>
+          </div>
+          <div class="row p-3">
+            <div class="col-sm-6">
+              Monto: <strong> {{data.rode}} </strong>
+            </div>
+            <div class="col-sm-6">
+              Saldo: <strong> {{data.balance}} </strong>
+            </div>
+          </div>
+          <div class="row p-3">
+            <div class="col-sm-6">
+              Vigencia: <strong> {{data.validity | date:'medium'}} </strong>
+            </div>
+            <div class="col-sm-6">
+              Fecha Extendida: <strong> {{data.creationDate | date:'medium'}} </strong>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body" *ngIf="typeEdition.type == 'delete'">
+          Desea eliminar el registro de <strong> {{data.cod}} </strong> ?
+        </div>
+      </div>
+      <div class="d-flex justify-content-center p-3">
+        <button (click)="accept()" class="btn btn-primary"
+          *ngIf="typeEdition.type == 'new' || typeEdition.type == 'edit'"
+          [disabled]="!data.cod || !data.rode || !data.balance || !data.validity || !data.customer">
+          Aceptar
+        </button>
+        <button (click)="accept()" class="btn btn-primary"
+          *ngIf="typeEdition.type == 'detail' || typeEdition.type == 'delete'">
+          Aceptar
+        </button>
+        &nbsp;&nbsp;&nbsp;
+        <button (click)="cancel()" class="btn btn-outline-primary"
+          *ngIf="typeEdition.type == 'new' || typeEdition.type == 'edit' || typeEdition.type == 'delete'">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
