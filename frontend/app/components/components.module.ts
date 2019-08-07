@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { ComponentRoutingModule } from './componets-routing.module';
 import { UserComponent } from './user/user.component';
 import { SharedModule } from '../shared/shared.module';
@@ -18,7 +17,6 @@ import { StoresComponent } from './stores/stores.component';
     SharedModule
   ],
   declarations: [
-    DashboardComponent,
     UserComponent,
     CardsComponent,
     TransactionsComponent,
@@ -26,7 +24,7 @@ import { StoresComponent } from './stores/stores.component';
     StoresComponent
   ],
   exports: [
-    DashboardComponent
+    CustomersComponent
   ]
 })
 export class ComponentsModule { }

@@ -57,22 +57,6 @@ export class CardsComponent implements OnInit {
     this.open = true;
   }
 
-  edit(item: Card) {
-    this.item = item;
-    this.typeEdition.type = 'edit';
-    this.typeEdition.title = 'Editar Registro';
-    this.typeEdition.result = false;
-    this.open = true;
-  }
-
-  delete(item: Card) {
-    this.item = item;
-    this.typeEdition.type = 'delete';
-    this.typeEdition.title = 'Eliminar Registro';
-    this.typeEdition.result = false;
-    this.open = true;
-  }
-
   showToast(type: string, message?: string) {
     switch (type) {
       case 'success': {

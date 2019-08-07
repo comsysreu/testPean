@@ -12,12 +12,12 @@
               <input type="number" [(ngModel)]="data.cod" placeholder="Código" class="input">
             </div>
             <div class="col-sm-6">
-              <input type="number" [(ngModel)]="data.rode" placeholder="Monto" class="input">
+              <input type="number" [(ngModel)]="data.rode" (keyup)="assingData($event)" placeholder="Monto" class="input">
             </div>
           </div>
           <div class="row p-3">
             <div class="col-sm-6">
-              <input [(ngModel)]="data.balance" placeholder="Saldo" class="input">
+              <input type="number" [(ngModel)]="data.balance" placeholder="Saldo" class="input" readonly >
             </div>
             <div class="col-sm-6">
               <input type="date" [(ngModel)]="data.validity" placeholder="Vigencia" class="input">

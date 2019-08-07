@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotFoundComponent } from '../shared/not-found/not-found.component';
 import { UserComponent } from './user/user.component';
 import { CardsComponent } from './cards/cards.component';
@@ -11,7 +10,7 @@ import { StoresComponent } from './stores/stores.component';
 const routes: Routes = [
     {
         path: '',
-        component: DashboardComponent,
+        component: CustomersComponent,
         data: {
             title: 'Inicio'
         }

@@ -107,4 +107,8 @@ export class ModalCardComponent implements OnInit, OnChanges {
     setTimeout(() => this.toastr.error(message, ERROR));
   }
 
+  assingData(evt) {
+    this.data.balance = this.data.rode; 
+  }
+
 }
