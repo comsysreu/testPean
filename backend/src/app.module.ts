@@ -17,7 +17,8 @@ import { EmployeesModule } from './modules/employees/employees.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: '181.209.138.62',
+      // host: 'localhost',
       port: 5432,
       username: 'postgres',
       password: 'admin',
