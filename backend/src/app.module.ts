@@ -22,7 +22,7 @@ import { EmployeesModule } from './modules/employees/employees.module';
       port: 5432,
       username: 'postgres',
       password: 'admin',
-      database: 'johndb',
+      database: 'db_test',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
