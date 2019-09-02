@@ -13,22 +13,22 @@ export class HomeBodyComponent implements OnInit {
     {
       name: 'Multicontacto Tipo Regleta De 6 Entradas',
       price: '34.99',
-      img: 'assets/image/l1.PNG',
+      img: 'assets/image/l1.png',
     },
     {
       name: 'Multicontacto Tipo Regleta De 6 Entradas',
       price: '34.99',
-      img: 'assets/image/L2.PNG',
+      img: 'assets/image/L2.png',
     },
     {
       name: 'Audífonos Intrauriculare Con Micrófono - Maxell Aufífonos línea extra línea extra',
       price: '34.99',
-      img: 'assets/image/L3.PNG',
+      img: 'assets/image/L3.png',
     },
     {
       name: 'Reproductor de DVD Samsumg',
       price: '349.99',
-      img: 'assets/image/L4.PNG',
+      img: 'assets/image/L4.png',
     }
   ]
 
