@@ -1,8 +1,8 @@
 // server
-// const URL = '/api';
+const URL = '/api';
 
 // nest
-const URL = 'http://localhost/api';
+// const URL = 'http://localhost/api';
 
 export const LOGIN_URL = `${URL}/login`;
 export const LOGOUT_URL = `${URL}/logout`;
