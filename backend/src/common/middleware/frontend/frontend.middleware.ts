@@ -1,4 +1,4 @@
-import { MiddlewareFunction, Injectable, NestMiddleware } from '@nestjs/common';
+import { Injectable, NestMiddleware } from '@nestjs/common';
 
 import * as path from 'path';
 import { ROUTE_PREFIX } from '../../routes';

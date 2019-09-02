@@ -13,13 +13,15 @@ import { ContactUsAdminComponent } from './contact-us-admin/contact-us-admin.com
 import { EmployeesComponent } from './employees/employees.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DepartamentComponent } from './departament/departament.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ComponentRoutingModule,
-    SharedModule
+    SharedModule, 
+    ChartsModule
   ],
   declarations: [
     UserComponent,

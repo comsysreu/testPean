@@ -1,4 +1,58 @@
-<p>
-  dashboard works!
-</p>
-z
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
+          <br>
+          <br>
+          <div class="d-flex  justify-content-center align-items-center">
+            <div class="d-flex flex-row">
+              <div class="align-self-center separator-line"></div>
+              <div class="p-2 title-separator">USUARIOS CREADOS ULTIMAS DOS SEMANAS </div>
+              <div class="align-self-center separator-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div style="display: block">
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+          [legend]="barChartLegend" [chartType]="barChartType" [colors]="barChartColors">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
+          <br>
+          <br>
+          <div class="d-flex  justify-content-center align-items-center">
+            <div class="d-flex flex-row">
+              <div class="align-self-center separator-line"></div>
+              <div class="p-2 title-separator">USUARIOS CREADOS POR MES</div>
+              <div class="align-self-center separator-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div style="display: block">
+        <canvas baseChart [datasets]="barChartDataMonth" [labels]="barChartLabelsMonth" [options]="barChartOptions"
+          [legend]="barChartLegendMonth" [chartType]="barChartType" [colors]="barChartColors">
+        </canvas>
+      </div>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>

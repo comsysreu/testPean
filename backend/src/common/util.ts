@@ -44,7 +44,10 @@ export class Utils {
     }
 
     static setModelCreationValues(obj: ParentModel, userId: number) {
-        obj.creationDate = new Date();
+        let date = new Date();
+        date.getMonth() - 1;
+        console.log(date);
+        obj.creationDate = date;
         obj.lastModifiedDate = new Date();
         obj.creationByUserId = userId;
         obj.lastModifiedByUserId = userId;
