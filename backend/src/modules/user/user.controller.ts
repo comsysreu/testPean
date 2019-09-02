@@ -83,26 +83,26 @@ export class UserController {
 
     @Post()
     async create(@Req() request, @Body() userEntity: User) {
-        // const authToken = Utils.getTokenFromRequest(request);
-        // return this.loginService.findToken(authToken).then(resp => {
-        //     if (resp) {
-        return this.userService.findByUser(userEntity.user).then(respUser => {
-            if (respUser.length > 0 && respUser[0].user == userEntity.user) {
-                Utils.throwHttpExceptionFromError(409, Enum.USER_CONFLICT);
+        const authToken = Utils.getTokenFromRequest(request);
+        return this.loginService.findToken(authToken).then(resp => {
+            if (resp) {
+                return this.userService.findByUser(userEntity.user).then(respUser => {
+                    if (respUser.length > 0 && respUser[0].user == userEntity.user) {
+                        Utils.throwHttpExceptionFromError(409, Enum.USER_CONFLICT);
+                    } else {
+                        return this.userService.create(userEntity).then(response => {
+                            return response;
+                        }).catch(error => {
+                            return error;
+                        });
+                    }
+                })
             } else {
-                return this.userService.create(userEntity).then(response => {
-                    return response;
-                }).catch(error => {
-                    return error;
-                });
+                Utils.throwHttpExceptionFromError(401, Enum.NOT_AUTHORIZED);
             }
+        }).catch(err => {
+            return err;
         })
-        //     } else {
-        //         Utils.throwHttpExceptionFromError(401, Enum.NOT_AUTHORIZED);
-        //     }
-        // }).catch(err => {
-        //     return err;
-        // })
     }
 
     @Put()
