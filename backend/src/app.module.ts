@@ -8,6 +8,10 @@ import { StoreModule } from './modules/store/store.module';
 import { CustomerModule } from './modules/customer/customer.module';
 import { CardModule } from './modules/card/card.module';
 import { TransactionModule } from './modules/transaction/transaction.module';
+import { ContactUsModule } from './modules/contact-us/contact-us.module';
+import { ProfileModule } from './modules/profile/profile.module';
+import { DepartamentModule } from './modules/departament/departament.module';
+import { EmployeesModule } from './modules/employees/employees.module';
 
 @Module({
   imports: [
@@ -27,6 +31,10 @@ import { TransactionModule } from './modules/transaction/transaction.module';
     CustomerModule,
     CardModule,
     TransactionModule,
+    ContactUsModule,
+    ProfileModule, 
+    DepartamentModule, 
+    EmployeesModule
   ],
   controllers: [AppController],
   providers: [AppService],

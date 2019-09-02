@@ -1,0 +1,30 @@
+.title {
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    font-family: verdana;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: normal;
+    color: #111C7F;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.title:hover {
+    color: #111C7F;
+    text-decoration-line: underline;
+    font-weight: bold;
+}
+
+.input-search{
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    font-family: verdana;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: normal;
+    height: 35px;
+    width: 100px;
+}

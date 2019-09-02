@@ -1,0 +1,35 @@
+.separator-line {
+    width: 350px;
+    height: 1px;
+    border: solid 1px #50535a;
+    background-color: #50535a;
+}
+
+.title-separator {
+    font-family: verdana;
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.7px;
+    text-align: center;
+    color: #111C7F;
+}
+
+.btn-success {
+    margin-top: 25px;
+    background-color: #BFFF00;
+    border-style: none;
+    font-family: verdana;
+    font-size: 24px;
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -1px;
+    text-align: center;
+    color: #ffffff;
+    height: 50px;
+    margin-bottom: 15px;
+}

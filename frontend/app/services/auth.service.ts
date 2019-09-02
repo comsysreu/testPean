@@ -98,7 +98,17 @@ export class AuthService {
     });
   }
 
-  validateToken(headers: any) {
+  validateToken(headers?: any) {
+
+    const headersT: any = {
+      'Content-Type': 'application/json',
+      'Authorization': this.getToken(),
+    };
+
+    if (headers == undefined) {
+      headers = headersT;
+    }
+
     const loginCredentials = `{"userName" : "${this.getUser()}", "token" : "${this.getToken()}"}`;
     return this.httpClient.post(VALIDATED_TOKEN, loginCredentials, { headers });
   }

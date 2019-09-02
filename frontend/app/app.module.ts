@@ -10,13 +10,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SharedModule } from './shared/shared.module';
+import { HomeComponent } from './home/home.component';
+import { PromotionsComponent } from './promotions/promotions.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    NavBarComponent
+    NavBarComponent, 
+    HomeComponent, 
+    PromotionsComponent, 
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,

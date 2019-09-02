@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
+    <br>
+    <br>
+    <div class="d-flex  justify-content-center align-items-center">
+      <div class="d-flex flex-row">
+        <div class="align-self-center separator-line"></div>
+        <div class="p-2 title-separator">CONTACTANOS</div>
+        <div class="align-self-center separator-line"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <br>
+    <br>
+    <div class="d-flex justify-content-center">
+      <input type="text" placeholder="Nombres y Apellidos" class="form-control" [(ngModel)]="contactUs.name">
+    </div>
+    <br>
+    <div class="d-flex justify-content-center">
+      <input type="email" placeholder="Correo Electronico" class="form-control" [(ngModel)]="contactUs.email">
+    </div>
+    <br>
+    <div class="d-flex justify-content-center">
+      <input type="number" placeholder="Número Telefónico" class="form-control" [(ngModel)]="contactUs.phone">
+    </div>
+    <br>
+    <div class="d-flex justify-content-center">
+      <textarea placeholder="Mensaje" class="form-control" [(ngModel)]="contactUs.message"></textarea>
+    </div>
+    <br>
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-success" (click)="sendMessage()"
+        [disabled]="contactUs.name == '' || contactUs.email == '' || contactUs.phone == '' || contactUs.message == ''">
+        Enviar Mensaje</button>
+    </div>
+    <br>
+  </div>
+</div>

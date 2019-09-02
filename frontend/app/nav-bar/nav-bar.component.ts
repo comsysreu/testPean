@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service'
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,7 +9,12 @@ import { AuthService } from '../services/auth.service'
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+  ) {
+    this.authService.validateToken().subscribe(resp => !resp ? this.router.navigate(['/login']) : console.log("TOKEN VALIDO"));
+  }
 
   ngOnInit() {
   }

@@ -6,7 +6,8 @@ import { SUCCESS, SUCCESS_MESSAGE, ERROR } from '../../enums/constats.enum';
 
 @Component({
   selector: 'app-user',
-  templateUrl: './user.component.html'
+  templateUrl: './user.component.html', 
+  styleUrls: ['../contact-us-admin/contact-us-admin.component.css']
 })
 export class UserComponent implements OnInit {
 

@@ -1,0 +1,18 @@
+.separator-line {
+    width: 450px;
+    height: 1px;
+    border: solid 1px #50535a;
+    background-color: #50535a;
+}
+
+.title-separator {
+    font-family: verdana;
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.7px;
+    text-align: center;
+    color: #111C7F;
+}

@@ -8,6 +8,11 @@ import { CardsComponent } from './cards/cards.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { CustomersComponent } from './customers/customers.component';
 import { StoresComponent } from './stores/stores.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ContactUsAdminComponent } from './contact-us-admin/contact-us-admin.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { ProfileComponent } from './profile/profile.component';
+import { DepartamentComponent } from './departament/departament.component';
 
 @NgModule({
   imports: [
@@ -21,7 +26,12 @@ import { StoresComponent } from './stores/stores.component';
     CardsComponent,
     TransactionsComponent,
     CustomersComponent,
-    StoresComponent
+    StoresComponent,
+    DashboardComponent,
+    ContactUsAdminComponent,
+    EmployeesComponent,
+    ProfileComponent,
+    DepartamentComponent
   ],
   exports: [
     CustomersComponent
