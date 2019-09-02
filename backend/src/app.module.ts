@@ -17,12 +17,12 @@ import { EmployeesModule } from './modules/employees/employees.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: '181.209.138.62',
-      // host: 'localhost',
+      // host: '181.209.138.62',
+      host: 'localhost',
       port: 5432,
       username: 'postgres',
       password: 'admin',
-      database: 'db_test',
+      database: 'johndb',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
