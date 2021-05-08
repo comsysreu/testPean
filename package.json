@@ -40,7 +40,7 @@
     "reflect-metadata": "^0.1.13",
     "reverse-md5": "0.0.4",
     "rxjs": "^6.5.2",
-    "typeorm": "^0.2.18",
+    "typeorm": "^0.2.25",
     "zone.js": "~0.10.1"
   },
   "devDependencies": {
